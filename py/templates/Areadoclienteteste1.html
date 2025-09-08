@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Área do Cliente</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #172227;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: rgb(255, 255, 255)
+    }
+    .container {
+      background: rgb(155, 129, 96);
+      padding: 30px;
+      border-radius: 1px;
+      width: 350px;
+      box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.548);
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .tab {
+      cursor: pointer;
+      padding: 10px;
+      flex: 1;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+    }
+    .tab.active {
+      border-bottom: 2px solid #eb813f;
+      font-weight: bold;
+    }
+    .form {
+      display: none;
+    }
+    .form.active {
+      display: block;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box; /* evita aumentar o tamanho ao aplicar padding */
+      background-color: #fff; /* fundo branco */
+      color: #0c0c0c;
+    }
+
+    button {
+      width: 70%;
+      padding: 10px;
+      background: linear-gradient(90deg, #ffa56d 5%, #f18a4a 29%,#ca6f37 69%,#ca6f37 100%);
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px 60px;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #ca6f37 5%, #ca6f37 29%,#f18a4a 69%,#ffa56d 100%);
+      
+    }
+
+    .input-icon-email {
+      background: url("{{ url_for('static', filename='Imagens/icone/login_icone.png') }}") no-repeat 10px center ;
+      background-color: #fff; /* fundo branco */
+      background-size: 20px;   /* tamanho do ícone */
+      padding-left: 40px;      /* espaço pro texto não ficar em cima do ícone */
+    }
+
+    .input-icon-pass {
+      background: url("{{ url_for('static', filename='Imagens/icone/pass_icone.png') }}") no-repeat 5px center ;
+      background-color: #fff; /* fundo branco */
+      background-size: 30px;   /* tamanho do ícone */
+      padding-left: 40px;      /* espaço pro texto não ficar em cima do ícone */
+    }
+
+  </style>
+</head>
+<body>
+  <img src= "{{ url_for('static', filename='Imagens/IR-Tech-Logo.png') }}" alt="" width="260" height="210" style="background-color: #cfb18a">
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('login')">Login</div>
+      <div class="tab" onclick="showTab('cadastro')">Cadastro</div>
+      <div class="tab" onclick="showTab('senha')">Alterar Senha</div>
+    </div>
+
+    <!-- Formulário Login -->
+    <form class="form active" id="login" method="POST" action="/login" style="width: 330px;">
+      <input type="email" name="email" placeholder="Email" class="input-icon-email" required>
+      <input type="password" name="senha" placeholder="Senha" class="input-icon-pass"required>
+      <button type="submit" >Entrar</button>
+    </form>
+
+    <!-- Formulário Cadastro -->
+    <form class="form" id="cadastro" method="POST" action="/cadastro">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <!-- Formulário Alterar Senha -->
+    <form class="form" id="senha" method="POST" action="/alterar_senha">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha_atual" placeholder="Senha Atual" required>
+      <input type="password" name="nova_senha" placeholder="Nova Senha" required>
+      <button type="submit">Alterar</button>
+    </form>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".form").forEach(f => f.classList.remove("active"));
+
+      document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add("active");
+      document.getElementById(tabId).classList.add("active");
+    }
+  </script>
+</body>
+</html>

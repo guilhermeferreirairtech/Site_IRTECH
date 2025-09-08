@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Início - I.R TECH</title> <!-- TÍTULO-->
+    <link rel="stylesheet" href="/scr/css/style_1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/scr/Imagens/I.R-Tech-Logo.png" sizes="20x32">
+    <link rel="icon" href="/scr/Imagens/I.R-Tech-Logo.png" sizes="192x192">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /><!-- carrocel slick interativo  -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body class="home page-template-default page page-id-2999 wp-custom-logo">
+
+    <!-- Cabecalho da homepage -->
+    <div id="topo"></div>
+    <!-- Apresentação da homepage -->
+    <div id="Apresentacao"></div>
+    <!-- Escritório da homepage -->
+    <div id="escritorio"></div>
+    <!-- Serviços da homepage -->
+    <div id="servicos"></div>
+    <!-- Profissionais da homepage -->
+    <div id="profissionais"></div>
+    <!-- Clientes da homepage -->
+    <div id="clientes"></div>
+    <!-- Estrutura da homepage -->
+    <div id="estrutura"></div>
+    <!-- Certificação da homepage -->
+    <div id="certificacao"></div>
+    <!-- Agendamento da homepage -->
+    <div id="agendamento"></div>
+    <!-- Roodape da homepage -->
+    <div id="rodape"></div>
+
+    <!-- Sessão do serviço na homepage -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener("scroll", function () {
+            const topo = document.getElementById("topo");
+            if (window.scrollY > 1) { // quando passar de 50px do topo
+                topo.classList.add("scrolled");
+            } else {
+                topo.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <!-- Sessão da equipe na homepage -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- carrocel slick interativo  -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><!-- carrocel slick interativo  -->
+    <script>
+        $(document).ready(function () {
+            $('.multiple-profissionais').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                arrows: true,
+                dots: false,
+                arrows: true,  // ativa as setas
+                prevArrow: '<button class="slick-prev">‹</button>',
+                nextArrow: '<button class="slick-next">›</button>',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: { slidesToShow: 2 }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
+            });
+        })
+         $(document).ready(function () {
+            $('.multiple-clientes').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                arrows: true,
+                dots: false,
+                arrows: true,  // ativa as setas
+                prevArrow: '<button class="slick-prev">‹</button>',
+                nextArrow: '<button class="slick-next">›</button>',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: { slidesToShow: 2 }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <section class="direitos-reservados " style="padding: 0%;">
+        <div class="container">
+            <div class="row flex-column flex-md-row">
+                <div class="col-12">
+                    <p>Todos os direitos reservados | © 2025 I.R TECH</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a style="position:fixed;bottom:22px;right:8px;z-index: 100;"
+        href="https://api.whatsapp.com/send/?phone=5535991383021&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0">
+        <img width="150px" src="/scr/Imagens/Local/img_wpp.png" alt="">
+    </a>
+
+    <script>
+        async function loadSection(id, file) {
+            const response = await fetch(file);
+            const html = await response.text();
+            document.getElementById(id).innerHTML = html;
+
+             if (id === "Apresentacao") {
+              // Reativa o carrossel após inserir o HTML
+                const heroCarousel = document.querySelector('#heroCarousel');
+                if (heroCarousel) {
+                    new bootstrap.Carousel(heroCarousel, {
+                        interval: 5000,
+                        ride: 'carousel'
+                });
+                }
+            }   
+
+            if (id === "profissionais") {
+            $('.multiple-profissionais').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                arrows: true,
+                dots: false,
+                autoplay: false,
+                prevArrow: '<button class="slick-prev"><</button>',
+                nextArrow: '<button class="slick-next">›</button>',
+                responsive: [
+                    { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1 } }
+                ]
+            });
+        }
+            if (id === "clientes") {
+            $('.multiple-clientes').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                arrows: true,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button class="slick-prev"><</button>',
+                nextArrow: '<button class="slick-next">›</button>',
+                responsive: [
+                    { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1 } }
+                ]
+            });
+        }
+        }
+
+        loadSection("topo", "/scr/sections/index_topo.html");
+        loadSection("Apresentacao", "/scr/sections/index_Apresentacao.html");
+        loadSection("escritorio", "/scr/sections/index_escritorio.html");
+        loadSection("servicos", "/scr/sections/index_servicos.html");
+        loadSection("profissionais", "/scr/sections/index_profissionais.html");
+        loadSection("clientes", "/scr/sections/index_clientes.html");
+        loadSection("estrutura", "/scr/sections/index_estrutura.html");
+        loadSection("certificacao", "/scr/sections/index_certificacao.html");
+        loadSection("agendamento", "/scr/sections/index_agendamento.html");
+        loadSection("rodape", "/scr/sections/index_rodape.html")
+    </script>
+</body>
+</html>

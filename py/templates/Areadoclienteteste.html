@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico Power BI</title>
+  <!-- CSS local -->
+  <!-- Swiper -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_1.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"><!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"><!-- Slick Carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"><!-- Favicon -->
+  <!--<img src="/scr/Imagens/I.R-Tech-Logo.png" alt="logo" width="50" height="40">-->
+
+  <style>
+    iframe {
+      border: none;
+      width: 100%;
+      height: 390px;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- TOPO -->
+  <section id="topo-servico" class="d-none d-md-block">
+    <div class="container py-2">
+      <div class="pb-1 row align-items-center justify-content-between line-style-topo-servico">
+        <div class="col-3">
+          <a href="/">
+             
+             <img src="{{ url_for('static', filename='Imagens/IR-Tech-Logo.png') }}" alt="Logo">
+          </a>
+        </div>
+        <div class="col-9 d-flex align-items-center justify-content-around">
+          <div class="menu-menu-topo-2021-container">
+            <ul id="menu-menu-topo-2021"
+              class="menu-sem-bolinha d-flex justify-content-between w-100 p-0 m-0">
+              <li><a href="#escritorio">A EMPRESA</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#profissionais">Profissionais</a></li>
+              <li><a href="/logout">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <section id="escritorio" style="padding: 0px 0px">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12 mb-4">
+          <h2 class="title-style line-style-title"><br></br>Gráfico</h2>
+          <h3 class="mb-4">Indicadores de contrato</h3>
+          <iframe 
+            title="Dashboard de Atendimentos" 
+            src="https://app.powerbi.com/reportEmbed?reportId=989af6ed-3321-4a53-98dc-9f9cca667350&appId=df1f8a91-7ea1-42f8-a91a-5a6ff99a9137&autoAuth=true&ctid=e9758e91-c34b-41d1-b3bf-8bce9859877a" 
+            allowfullscreen="true">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    window.addEventListener("scroll", function () {
+      const topo = document.getElementById("topo");
+      if (window.scrollY > 0) {
+        topo.classList.add("scrolled");
+      } else {
+        topo.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+</html>

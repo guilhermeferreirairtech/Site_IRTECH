@@ -1,17 +1,17 @@
 /* Cabeçalho fixo com fundo preto e degradê laranja à esquerda */
 #topo {
   position: fixed;
-  height: 60px;
+  height: 80px;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  background: linear-gradient(20deg, #ca6f37 5%, rgba(255, 255, 255, 0) 29%, rgba(255, 255, 255, 0) 69%, rgba(255, 255, 255, 0) 100%); /* transparente no topo */
+  background: linear-gradient(90deg, #6E2D0C 10%, #FF914D 100%); /* transparente no topo */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #topo.scrolled {
-  background: linear-gradient(20deg, #ca6f37 5%, #b3612e 29%,#172227 69%,#121b1f 100%); /* 1 = sem transparência */
+  background: linear-gradient(90deg, #6E2D0C 10%, #FF914D 100%); /* 1 = sem transparência */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -23,8 +23,8 @@
 
 /* estilo no topo (linha) */
 .line-style-topo{
-  border-bottom:  2px solid  #ff914d; /* espesura e cor */
-  height: 45px;  /* altura da linha no cabeçalho */
+  border-bottom:  3px solid  #00000000; /* espesura e cor */
+  height: 55px;  /* altura da linha no cabeçalho */
 
 }
 
@@ -47,14 +47,14 @@
 #topo ul.menu-sem-bolinha li a {
     color: white;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: unset;
     text-decoration: none;
     padding: 5px 20px;
     transition: color 0.3s ease;
 }
 
 #topo ul.menu-sem-bolinha li a:hover {
-    color: #5f617e;
+    color: #000000;
 }
 
 
@@ -72,13 +72,14 @@
   left: 0;
   width: 100%;
   z-index: 9999;
-  background: linear-gradient(20deg, #ca6f37 5%, #172227 29%,#1d2b31 69%,#1c2930 100%); /* Sem transparencia */
+  background: linear-gradient(90deg, #6E2D0C 10%, #FF914D 100%);
+ /* Sem transparencia */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Logo */
 #topo-servico .col-3 img {
-    max-height: 40px;
+    max-height: 60px;
 }
 
 /* Menu */
@@ -95,14 +96,14 @@
 #topo-servico ul.menu-sem-bolinha li a {
     color: white;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: unset;
     text-decoration: none;
     padding: 5px 20px;
     transition: color 0.3s ease;
 }
 
 #topo-servico ul.menu-sem-bolinha li a:hover {
-    color: #5f617e;
+    color: #000000;
 }
 
 
@@ -113,8 +114,8 @@
     justify-content: space-around;
 }
 .line-style-topo-servico{
-  border-bottom:  2px solid  #ff914d; /* espesura e cor */
-  height: 65px;  /* altura da linha no cabeçalho */
+  border-bottom:  3px solid  #00000000; /* espesura e cor */
+  height: 55px;  /* altura da linha no cabeçalho */
 
 }
 
@@ -130,12 +131,13 @@ body {
       position: relative;
       margin: 0 5px;
       list-style: none;
+      
     }
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      padding: 8px;
+      font-weight: lighter;
+      padding: 5px;
       display: block;
       list-style-type: none;  
       
@@ -150,13 +152,17 @@ body {
       position: absolute;
       top: 100%;
       left: 0;
-      background: linear-gradient(120deg, #ca6f37 5%, #172227 25%,#1d2b31 39%,#1c2930 80%);
+      background: linear-gradient(120deg, #6E2D0C 10%, #FF914D 90%, #f0f0f0 100%);
       padding: 05px 0px;
       min-width: 290px;
-      border-radius: 1px;
+      border-radius: 5px;
+      box-shadow: 3px 3px 8px rgba(34, 34, 34, 0.651);
+      font: lighter;
+      border-bottom: 1px solid  #6E2D0C;
     }
     nav ul li ul li {
-      margin: 0;
+      margin: 1;
+      border-bottom: 1px solid  #6e2d0c44;
     }
     nav ul li ul li a {
       padding: 8px 15px;
@@ -211,6 +217,7 @@ body {
 }
 
 .hero-title {
+  font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
   margin: 0rem;
   color: #fff;
   text-shadow: 0 6px 10px rgb(240, 126, 33);
@@ -226,6 +233,7 @@ body {
 
 /* Linha antes do texto */
 .hero-line1 {
+  font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
   flex: 1;
   height: 4px;
   background-color: #ff914d;
@@ -235,6 +243,7 @@ body {
 
 /* Linha depois do texto */
 .hero-line2 { 
+  font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
   flex: 1; /* ocupa todo espaço possível */ 
   height: 4px; /* espessura */ 
   background-color: #ff914d; /* cor */ 
@@ -290,10 +299,10 @@ body {
 
 /* Blocos MISSÃO, VISÃO, VALORES */
 .box-cinza-2021 {
-  background: #3740492a; /* azul bem escuro */
+  background: #4646462a; /* azul bem escuro */
   border-radius: 1px;
   margin: -2rem auto 6rem;
-  box-shadow: 1px 1px 2px rgba(70, 73, 80, 0.247);
+  box-shadow: 1px 1px 2px rgba(82, 82, 82, 0.247);
   transition: transform 0.4s ease, box-shadow 0.2s ease;
   position: relative;
 }
@@ -313,7 +322,7 @@ body {
 }
 
 .box-cinza-2022 {
-  background: #3740492a; /* azul bem escuro */
+  background: #0762bd2a; /* azul bem escuro */
   border-radius: 1px;
   margin: -2rem auto 6rem;
   box-shadow: 1px 1px 2px rgba(70, 73, 80, 0.247);
@@ -332,7 +341,7 @@ body {
 /* efeito hover */
 .box-cinza-2022:hover {
   transform: translateY(50px);
-  transform: translateX(150px);
+  transform: translateX(10px);
   box-shadow: 5px 5px 8px rgb(158, 87, 5);
 }
 
@@ -355,7 +364,7 @@ body {
 
 /* efeito hover */
 .box-cinza-2023:hover {
-  transform: translateY(50px);
+  transform: translateY(10px);
   
   box-shadow: 5px 5px 8px rgb(158, 87, 5);
 }
@@ -457,6 +466,18 @@ body {
   z-index: 10;
   animation: bounce 2s infinite;
 }
+.movimento {
+  position: absolute;
+  bottom: 20px; 
+  left: -30px; 
+  width: 190px;
+  height: 60px;
+  transform: translateX(20%) rotate(90deg);
+  cursor: pointer;
+  z-index: 10;
+  animation: bounce1 3s infinite;
+}
+
 
 @keyframes bounce {
   0%, 100% {
@@ -464,6 +485,15 @@ body {
   }
   50% {
     transform: translateX(-50%) translateY(10px) rotate(-45deg);
+  }
+}
+
+@keyframes bounce1 {
+  0%, 100% {
+    transform: translateX(-100%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-95%) translateY(10px) rotate(0deg);
   }
 }
 
@@ -662,7 +692,7 @@ body {
 #servicos-4:hover,
 #servicos-5:hover,
 #servicos-6:hover {
-  background-color: #525a64;
+  background-color: #3d3d3d;
 }
 #servicos-2:hover img,
 #servicos-3:hover img,
@@ -1051,7 +1081,7 @@ body {
   bottom: 0;
   height: 100%;
   transition: bottom 0.3s;
-  background: linear-gradient(180deg, transparent 50%, #001620 90%);
+  background: linear-gradient(180deg, transparent 85%, #6E2D0C 100%);
 }
 
 .textos-1 .cv-resumed p,

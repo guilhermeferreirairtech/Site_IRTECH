@@ -148,7 +148,6 @@ body {
 
     /* Estilo do dropdown */
     nav ul li ul {
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -159,7 +158,19 @@ body {
       box-shadow: 3px 3px 8px rgba(34, 34, 34, 0.651);
       font: lighter;
       border-bottom: 1px solid  #6E2D0C;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+      pointer-events: none;
     }
+    
+    nav ul li:hover > ul {
+      opacity: 1;
+      transform: scaleY(1);
+      pointer-events: auto;
+    }
+
     nav ul li ul li {
       margin: 1;
       border-bottom: 1px solid  #6e2d0c44;

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="../../scr/css/style_1.css">
+    <link rel="icon" href="../../scr/Imagens/IR-Tech-Logo.png" sizes="20x32">
+    <link rel="icon" href="../../scr/Imagens/IR-Tech-Logo.png" sizes="192x192">
+
   <meta charset="UTF-8">
   <title>Login - Área do Cliente</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #172227;
+      background:linear-gradient(90deg, #6E2D0C 10%, #FF914D 100%);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: rgb(255, 255, 255)
+      color: rgb(0, 0, 0)
     }
     .container {
-      background: rgb(155, 129, 96);
+      background: rgb(255, 255, 255);
       padding: 30px;
       border-radius: 1px;
       width: 350px;
@@ -33,7 +37,7 @@
       border-bottom: 2px solid transparent;
     }
     .tab.active {
-      border-bottom: 2px solid #eb813f;
+      border-bottom: 2px solid #FF914D;
       font-weight: bold;
     }
     .form {
@@ -57,7 +61,7 @@
     button {
       width: 70%;
       padding: 10px;
-      background: linear-gradient(90deg, #ffa56d 5%, #f18a4a 29%,#ca6f37 69%,#ca6f37 100%);
+      background: linear-gradient(90deg, #6E2D0C 10%, #FF914D 100%);
       border: none;
       color: white;
       border-radius: 5px;
@@ -65,7 +69,7 @@
       margin: 5px 60px;
     }
     button:hover {
-      background: linear-gradient(90deg, #ca6f37 5%, #ca6f37 29%,#f18a4a 69%,#ffa56d 100%);
+      background: linear-gradient(90deg, #FF914D 10%,#6E2D0C 100%);
       
     }
 
@@ -86,7 +90,8 @@
   </style>
 </head>
 <body>
-  <img src= "{{ url_for('static', filename='Imagens/IR-Tech-Logo.png') }}" alt="" width="260" height="210" style="background-color: #cfb18a">
+  
+  <img src= "{{ url_for('static', filename='Imagens/IR-Tech-Logo.png') }}" alt="" width="260" height="210" style="background-color: #E5E5E5; padding: 15px;">
   <div class="container">
     <div class="tabs">
       <div class="tab active" onclick="showTab('login')">Login</div>
